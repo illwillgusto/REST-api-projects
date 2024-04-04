@@ -21,3 +21,8 @@ const userRoutes = require('./routes/users');
 
 // import the MongoDB connection 
 require('./models/db');
+
+// Middleware
+app.use(express.json())
+
+app.use('/api/users', userRoutes);
