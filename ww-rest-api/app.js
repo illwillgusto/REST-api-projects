@@ -15,3 +15,7 @@ app.get('/api/users', (req, res) => {
 
     res.json(users);
 })
+
+// import the users routes 
+const userRoutes = require('./routes/users');
+
