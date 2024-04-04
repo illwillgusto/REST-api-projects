@@ -19,6 +19,7 @@ router.post('/', (req, res) => {
         });
 });
 
+// read all users 
 router.get('/', (req, res) => {
     User.find()
         .then((users) => {
@@ -26,5 +27,19 @@ router.get('/', (req, res) => {
         })
         .catch((err) => {
             res.status(500).json({ error: 'Error fetching users' });
+        });
+});
+
+//update a user by ID 
+router.put('/:id', (req, res) => {
+    const { id } = req.params;
+    const { name, email, age } = req.body;
+
+    User.findByIdAndUpdate(id, { name, email, age }, { new: true })
+        .then((user) => {
+            res.json(user);
+        })
+        .catch((err) => {
+            res.status(500).json({ error: 'Error updating user'});
         });
 });
