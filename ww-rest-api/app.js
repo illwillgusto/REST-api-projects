@@ -19,3 +19,5 @@ app.get('/api/users', (req, res) => {
 // import the users routes 
 const userRoutes = require('./routes/users');
 
+// import the MongoDB connection 
+require('./models/db');
