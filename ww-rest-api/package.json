@@ -1,0 +1,14 @@
+{
+  "name": "ww-rest-api",
+  "version": "1.0.0",
+  "description": "rest-api-projecta",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "author": "Will Walton",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.19.2"
+  }
+}
