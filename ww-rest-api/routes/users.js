@@ -43,3 +43,18 @@ router.put('/:id', (req, res) => {
             res.status(500).json({ error: 'Error updating user'});
         });
 });
+
+// delete a user by ID
+router.delete('/:id', (req, res) => {
+    const { id } =req.params;
+
+    User.findByIdAndRemove(id)
+        .then(() => {
+            res.json({ message: 'User deleted successfully' });
+        })
+        .catch((err) => {
+            res.status(500).json({ error: 'Error deleting user' });
+        });
+});
+
+module.exports = router;
